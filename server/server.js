@@ -49,3 +49,8 @@ app.get('/getQuizAnswerById/:id', (req, res)=>{
 app.listen(port, ()=>{
     console.log(`started on port ${port}`);
 });
+
+
+//heroku git:remote -a quizzle-react
+
+//heroku git:remote -a quiz-rest-api

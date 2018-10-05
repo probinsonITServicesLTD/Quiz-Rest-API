@@ -4,7 +4,11 @@
   "description": "Quiz API",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "nodemon server/server.js"
+  },
+  "engines": {
+    "node": "8.12.0"
   },
   "author": "Paul Robinson",
   "license": "ISC",
