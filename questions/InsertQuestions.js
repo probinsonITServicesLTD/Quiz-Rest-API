@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/RestQuizAPI', { 
+mongoose.connect('mongodb://heroku_q7zh4kfb:9lp28ki99u4chgg9anjc59fqfl@ds223653.mlab.com:23653/heroku_q7zh4kfb', { 
     useCreateIndex: true,
     useNewUrlParser: true 
 });
@@ -58,25 +58,25 @@ var quizSchema = new Schema({
 
 const Quiz = mongoose.model('Quiz', quizSchema);
 
-// Quiz.insertMany(questions).then((doc)=>{
-//     console.log("ok", doc);
-// }, (err)=>{
-//     console.log("Error", err);
-// });
+Quiz.insertMany(questions).then((doc)=>{
+    console.log("ok", doc);
+}, (err)=>{
+    console.log("Error", err);
+});
 
 
 
-Quiz.find({subcat1:'50\'s'}).select('answer').then((docs)=>{
-    console.log("FOUND",JSON.stringify(docs, undefined, 2));
-},(err)=>{
-    console.log("error", err)
-})
+// Quiz.find({subcat1:'50\'s'}).select('answer').then((docs)=>{
+//     console.log("FOUND",JSON.stringify(docs, undefined, 2));
+// },(err)=>{
+//     console.log("error", err)
+// })
 
-Quiz.find({_id:''}).select('answer').then((docs)=>{
-    console.log("FOUND",JSON.stringify(docs, undefined, 2));
-},(err)=>{
-    console.log("error", err)
-})
+// Quiz.find({_id:''}).select('answer').then((docs)=>{
+//     console.log("FOUND",JSON.stringify(docs, undefined, 2));
+// },(err)=>{
+//     console.log("error", err)
+// })
 
 //queries
 
