@@ -15,7 +15,7 @@ var quizSchema = new Schema({
         type: String, 
         required: true,
         trim: true,
-        enum: ['Sci-Fi', 'TV Shows', 'Movies']
+        enum: ['tvshows', 'movies']
     },
     question: {
         type: String,
