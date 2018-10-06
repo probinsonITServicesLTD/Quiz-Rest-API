@@ -7,7 +7,7 @@ const {Quiz} = require('./model/Quiz');
 var app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/getSingleQuizByCategory', (req, res)=>{
+app.get('/getQuizCollectionByCategory', (req, res)=>{
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
@@ -15,7 +15,7 @@ app.get('/getSingleQuizByCategory', (req, res)=>{
     //requires a category param in the query string ie http://localhost:3000/getSingleQuiz?category=50's
     var category = req.query.category;
     console.log("category ", category);
-    Quiz.findOne({
+    Quiz.find({
         category : category
     }).select({
         category: 1,
