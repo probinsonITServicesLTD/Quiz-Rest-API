@@ -14,9 +14,11 @@ app.get('/getQuizCollectionByCategory', (req, res)=>{
     res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     //requires a category param in the query string ie http://localhost:3000/getSingleQuiz?category=50's
     var category = req.query.category;
+    var subcat1 = req.query.subcat1
     console.log("category ", category);
     Quiz.find({
-        category : category
+        category : category,
+        subcat1 : subcat1
     }).select({
         category: 1,
         question: 2,
