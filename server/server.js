@@ -13,7 +13,7 @@ app.get('/getSingleQuizByCategory', (req, res)=>{
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
     res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     //requires a category param in the query string ie http://localhost:3000/getSingleQuiz?category=50's
-    var subcat1 = req.query.category;
+    var category = req.query.category;
     console.log("category ", category);
     Quiz.findOne({
         category : category
